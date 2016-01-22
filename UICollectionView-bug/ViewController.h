@@ -6,10 +6,8 @@
 //  Copyright © 2016 Aleksey Storozhev. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+@import UIKit;
 
 @interface ViewController : UIViewController
-
-
 @end
 
