@@ -20,7 +20,7 @@ static Node *ChildNode() {
 static Node *RandomNodeWithChildrenRange(NSRange range) {
 
     NSMutableArray *children = [NSMutableArray array];
-    const NSUInteger childrenCount = range.location + (range.length > 0 ? (arc4random() % range.length) : 0);
+    const NSUInteger childrenCount = range.location + (range.length > 0 ? (1+arc4random() % range.length) : 0);
     
     const CGFloat inset = 10.f;
     CGFloat x = inset;
@@ -42,7 +42,7 @@ static Node *RandomNodeWithChildrenRange(NSRange range) {
 
 static Node *RandomRootNode()
 {
-    return RandomNodeWithChildrenRange(NSMakeRange(arc4random()%4, arc4random()%4));
+    return RandomNodeWithChildrenRange(NSMakeRange(arc4random()%4, 1+arc4random()%4));
 }
 
 @interface TestCell : UICollectionViewCell
@@ -72,7 +72,6 @@ static Node *RandomRootNode()
     if (self) {
         self.navigationItem.rightBarButtonItems = @[
             [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(actionInsert:)],
-            [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemTrash target:self action:@selector(actionDelete:)],
             [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemRefresh target:self action:@selector(actionReset:)],
         ];
 
@@ -104,30 +103,17 @@ static Node *RandomRootNode()
 
 - (void)actionInsert:(id)sender {
     
-    [_section insertObject:RandomRootNode() atIndex:1];
-    [_section insertObject:RandomRootNode() atIndex:2];
+    [_section insertObjects:@[RandomRootNode(),RandomRootNode()]
+                  atIndexes:[NSIndexSet indexSetWithIndexesInRange:NSMakeRange(1, 2)]];
+    
     
     if ([self.switchView isOn]) {
         [self.collectionView performBatchUpdates:^{
+
+            
             [self.collectionView insertItemsAtIndexPaths:@[
                                                            [NSIndexPath indexPathForItem:1 inSection:0],
-                                                           [NSIndexPath indexPathForItem:2 inSection:0]
-                                                           ]];
-        } completion:^(BOOL finished) {}];
-    } else {
-        [self.collectionView reloadData];
-    }
-}
-
-- (void)actionDelete:(id)sender {
-    [_section removeObjectAtIndex:1];
-    [_section removeObjectAtIndex:2];
-    
-    if ([self.switchView isOn]) {
-        [self.collectionView performBatchUpdates:^{
-            [self.collectionView deleteItemsAtIndexPaths:@[
-                                                           [NSIndexPath indexPathForItem:1 inSection:0],
-                                                           [NSIndexPath indexPathForItem:3 inSection:0]
+                                                           [NSIndexPath indexPathForItem:2 inSection:0],
                                                            ]];
         } completion:^(BOOL finished) {}];
     } else {

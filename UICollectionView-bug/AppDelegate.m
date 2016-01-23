@@ -8,6 +8,7 @@
 
 #import "AppDelegate.h"
 #import "ViewController.h"
+#import "Runtime-Samples.h"
 
 @interface AppDelegate ()
 @end
@@ -22,7 +23,15 @@
 
     [window makeKeyAndVisible];
     self.window = window;
-
+    
+#define RUNTIME_TEST 0
+    
+#if (RUNTIME_TEST)
+    [TestClass test];
+    NSLog(@"=== HOOK ===");
+    [TestClass hook];
+    [TestClass test];
+#endif
     return YES;
 }
 

@@ -13,6 +13,8 @@
 		321EB5DC1C52512C007EF0D0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 321EB5DB1C52512C007EF0D0 /* Assets.xcassets */; };
 		321EB5DF1C52512C007EF0D0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 321EB5DD1C52512C007EF0D0 /* LaunchScreen.storyboard */; };
 		321EB5E81C52542A007EF0D0 /* UICollectionViewTreeLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 321EB5E71C52542A007EF0D0 /* UICollectionViewTreeLayout.m */; };
+		321EB6001C5303E2007EF0D0 /* UICollectionViewFixer.m in Sources */ = {isa = PBXBuildFile; fileRef = 321EB5FF1C5303E2007EF0D0 /* UICollectionViewFixer.m */; };
+		321EB6051C532AD3007EF0D0 /* Runtime-Samples.m in Sources */ = {isa = PBXBuildFile; fileRef = 321EB6041C532AD3007EF0D0 /* Runtime-Samples.m */; };
 		CAD42CEC20E2F50161686EEB /* Node.m in Sources */ = {isa = PBXBuildFile; fileRef = CAD420C2624C17B3B154C97E /* Node.m */; };
 /* End PBXBuildFile section */
 
@@ -28,6 +30,10 @@
 		321EB5E01C52512C007EF0D0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		321EB5E61C52542A007EF0D0 /* UICollectionViewTreeLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UICollectionViewTreeLayout.h; sourceTree = "<group>"; };
 		321EB5E71C52542A007EF0D0 /* UICollectionViewTreeLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UICollectionViewTreeLayout.m; sourceTree = "<group>"; };
+		321EB5FE1C5303E2007EF0D0 /* UICollectionViewFixer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UICollectionViewFixer.h; sourceTree = "<group>"; };
+		321EB5FF1C5303E2007EF0D0 /* UICollectionViewFixer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UICollectionViewFixer.m; sourceTree = "<group>"; };
+		321EB6031C532AD3007EF0D0 /* Runtime-Samples.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Runtime-Samples.h"; sourceTree = "<group>"; };
+		321EB6041C532AD3007EF0D0 /* Runtime-Samples.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Runtime-Samples.m"; sourceTree = "<group>"; };
 		CAD420C2624C17B3B154C97E /* Node.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Node.m; sourceTree = "<group>"; };
 		CAD42FC6DEA4A3AE7336297A /* Node.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Node.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -74,6 +80,10 @@
 				321EB5E71C52542A007EF0D0 /* UICollectionViewTreeLayout.m */,
 				CAD420C2624C17B3B154C97E /* Node.m */,
 				CAD42FC6DEA4A3AE7336297A /* Node.h */,
+				321EB5FE1C5303E2007EF0D0 /* UICollectionViewFixer.h */,
+				321EB5FF1C5303E2007EF0D0 /* UICollectionViewFixer.m */,
+				321EB6031C532AD3007EF0D0 /* Runtime-Samples.h */,
+				321EB6041C532AD3007EF0D0 /* Runtime-Samples.m */,
 			);
 			path = "UICollectionView-bug";
 			sourceTree = "<group>";
@@ -158,8 +168,10 @@
 				321EB5D71C52512C007EF0D0 /* ViewController.m in Sources */,
 				321EB5D41C52512C007EF0D0 /* AppDelegate.m in Sources */,
 				321EB5E81C52542A007EF0D0 /* UICollectionViewTreeLayout.m in Sources */,
+				321EB6001C5303E2007EF0D0 /* UICollectionViewFixer.m in Sources */,
 				321EB5D11C52512C007EF0D0 /* main.m in Sources */,
 				CAD42CEC20E2F50161686EEB /* Node.m in Sources */,
+				321EB6051C532AD3007EF0D0 /* Runtime-Samples.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
